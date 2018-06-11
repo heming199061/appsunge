@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="qmtv_android" parallel="tests" thread-count="1">
+    <!-- 参考：https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md -->
+	<!-- server地址 -->
+	<parameter name="serverURL" value="http://127.0.0.1:4723/wd/hub" />
+
+	<!-- automationName为selendroid or appium，如果sdk版本>=17请使用appium；如果sdk版本<=17请使用selendroid -->
+	<parameter name="automationName" value="Appium" />
+
+	<!-- 测试平台 iOS和Android -->
+	<parameter name="platformName" value="Android" />
+
+	<!-- 平台版本 -->
+	<parameter name="platformVersion" value="6.0" />
+
+	<!-- 设备名字，可随意起名字，但是要有意义 -->
+	<parameter name="deviceName" value="Smartisan M1L" />
+
+	<!-- android app路径 -->
+	<parameter name="androidAppPath" value="res/app/android/qmtv4.2.0_4217.apk" />
+
+	<!-- ios app路径 -->
+	<!-- <parameter name="iosAppPath" value="res/app/ios/xxx.app" /> -->
+	
+	<!-- app的包名 -->
+	<parameter name="appPackage" value="com.maimiao.live.tv" />
+	
+	<!-- app的 启动activity -->
+	<parameter name="appActivity" value="com.maimiao.live.tv.ui.activity.SplashAdsActivity" />
+	
+	<!-- 是否支持unicode输入，设置为true，可以输入中文字符 -->
+	<parameter name="unicodeKeyboard" value="true" />
+	
+	<!-- 重置键盘输入法 -->
+	<parameter name="resetKeyboard" value="true" />
+	
+	<!--设备UDID iPhone真机使用或者android并行测试可以使用 -->
+	<parameter name="udid" value="266e6e75" />
+	
+	<!-- 设置为true之后会覆盖当前session -->
+	<parameter name="sessionOverride" value="true" />
+	
+	<!-- 进程等待1秒中的控制时间，单位是秒 -->
+	<parameter name="sleepTime" value="1" />
+	
+	<!-- 页面元素2秒不出现超时时间 -->
+	<parameter name="elementTimeOut" value="5" />
+
+	<!-- Jenkins构建job的时候传到pom里，testng.xml可以引用到这个变量，进而通过@Parameters注解传到具体代码里 -->
+	<parameter name="platform" value="${platform}" />
+	
+	<listeners>
+		<!-- TestNG监听器，生成Excel报告 -->
+		<listener class-name="com.quanmin.excelReporter.TestResultListener" />
+		<listener class-name="com.quanmin.excelReporter.ExcelReporter" />
+	</listeners>
+	
+	<test name = "allTestsInAClass" preserve-order="true">
+	    <!-- 先不分组
+	    <groups>
+			<define name="All">
+				<include name="test" />
+			</define>
+			
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+	    -->
+		
+		<classes>
+			<class name="com.quanmin.testcase.android.myPage.MyPage_001" />
+			<!-- <class name="com.quanmin.testcase.android.myPage.MyPage_002" />
+			<class name="com.quanmin.testcase.android.myPage.MyPage_003" /> -->
+		</classes>
+	</test>
+
+</suite> 

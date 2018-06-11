@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="qmtv_android" parallel="tests" thread-count="1">
+
+	<!-- Jenkins构建job的时候传到pom里，testng.xml可以引用到这个变量，进而通过@Parameters注解传到具体代码里 -->
+	<!-- <parameter name="platform" value="${platform}" /> -->
+	
+	<listeners>
+		<!-- TestNG监听器，生成Excel报告 -->
+		<listener class-name="com.quanmin.excelReporter.TestResultListener" />
+		<listener class-name="com.quanmin.excelReporter.ExcelReporter" />
+	</listeners>
+	
+	<test name = "allTestsInAClass" preserve-order="true">
+	    <!-- 先不分组
+	    <groups>
+			<define name="All">
+				<include name="test" />
+			</define>
+			
+			<run>
+				<include name="All" />
+			</run>
+		</groups>
+	    -->
+		
+		<classes>
+		    <!-- 
+			<class name="com.quanmin.testcase.android.myDemo.MyDemo_001" />
+			<class name="com.quanmin.testcase.android.myDemo.MyDemo_002" />
+		    -->
+			<class name="com.quanmin.testcase.android.myDemo.MyDemo_003" />
+		</classes>
+	</test>
+
+</suite> 

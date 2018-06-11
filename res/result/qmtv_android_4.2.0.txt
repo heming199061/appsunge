@@ -1,0 +1,5 @@
+序号|哈希值前8位|测试状态|报告路径|包作者|包创建时间|commit消息|包下载路径|本地存放包的路径
+Sn|Hash_8|TestStatus|ReportDir|Author|PackageCreateTime|Msg|DownloadUrl|LocalDir
+3|poek9999|false|blank|lijinchao@qmtv.com|2018/5/12 下午1:33:03|[dev]:{优化LiveActivity跳转问题}|http://xxx.xx/x|D:\workspace_oxygen\app_Project\res\app\android
+2|p09f82l|false|D:\workspace_oxygen\app_Project\test-output\excelReports|lijinchao@qmtv.com|2018/5/11 下午1:33:03|[dev]:{优化LiveActivity跳转问题}|http://xxx.xx/x|D:\workspace_oxygen\app_Project\res\app\android
+1|8cl9f82l|true|D:\workspace_oxygen\app_Project\test-output\excelReports|lijinchao@qmtv.com|2018/5/11 下午1:32:59|Merge branch 'release/4.2.10' of git.quanmin.tv:Android/QuanminLive into release/4.2.10|http://xxx.xx/x|D:\workspace_oxygen\app_Project\res\app\android
